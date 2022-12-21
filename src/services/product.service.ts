@@ -7,7 +7,9 @@ import {
 import ProductModel, { ProductDocument } from "../models/product.model";
 
 export const createProduct = async (
-  input: DocumentDefinition<Omit<ProductDocument, "createdAt" | "updatedAt">>
+  input: DocumentDefinition<
+    Omit<ProductDocument, "createdAt" | "updatedAt" | "productId">
+  >
 ) => {
   return ProductModel.create(input);
 };
